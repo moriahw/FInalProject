@@ -12,10 +12,10 @@ namespace FinalProject.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class AppUser
+    public partial class Food
     {
         public string Name { get; set; }
-        public string Email { get; set; }
-        public System.DateTime DOB { get; set; }
+        public string Genre { get; set; }
+        public string Location { get; set; }
     }
 }
