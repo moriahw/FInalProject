@@ -4,31 +4,102 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Member</h2>
 
-
-<div class="panel panel-default">
-    <div class="panel-body">
-<table class="table" >
-    <tr>
-    <th>Name</th>
-    <th>Type</th>
-    <th>Location</th>
-
-       </tr>
-       
-    <tr>
-        <td>@ViewBag.EventData.Name;</td>
-       <td> @ViewBag.EventData.Genre;</td>
-       <td> @ViewBag.EventData.Location;</td>
-    </tr>
-        
-    <tr>
-        <td> @ViewBag.FoodData.Name;</td>
-        <td> @ViewBag.FoodData.Genre;</td>
-        <td> @ViewBag.FoodData.Location;</td>
-    </tr>
-               </table>
-    </div>
+<link type="text/css" href="~/Content/Style1.css" rel="stylesheet" />
+<div class="container">
+    <blockquote class="quote-box">
+        <p class="quotation-mark">
+            “
+        </p>
+        <p class="quote-text">
+            Nowhere on earth has more soul than Detroit.
+        </p>
+        <hr>
+        <div class="blog-post-actions">
+            <p class="blog-post-bottom pull-left">
+                Mayer Hawthorne
+            </p>
+            <p class="blog-post-bottom pull-right">
+                <span class="badge quote-badge"></span>  ❤
+            </p>
+        </div>
+    </blockquote>
 </div>
 
+
+
+    <style>
+        body {
+            background-image: url("https://embed.widencdn.net/img/quickenloans/uyivqbhcrg/725px@1x/QLineBWColor-20170520.jpg?q=80");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            background-color: #ffffff
+        }
+
+     
+        
+    </style>
+
+   
+<div class="row">
+    <div class="col-lg-6 portfolio-item">
+        <div class="container">
+            <blockquote class="quote-box">
+                <p class="quotation-mark">
+                   &nbsp;
+                </p>
+                <p class="quote-text">
+                    <p>Where To Go:</p>
+                    <p>@ViewBag.EventData.Name</p>
+                </p>
+                <hr>
+                <div class="blog-post-actions">
+                    <p class="blog-post-bottom pull-left">
+                        @ViewBag.EventData.Genre
+                    </p>
+                    <p class="blog-post-bottom pull-right">
+                        <span class="badge quote-badge"></span>  ❤
+                    </p>
+                </div>
+            </blockquote>
+        </div>
+    </div>
+    <div class="col-lg-6 portfolio-item">
+        <div class="container">
+            <blockquote class="quote-box">
+                <p class="quotation-mark">
+                    &nbsp;
+                </p>
+                <p class="quote-text">
+                    <p>Where To Eat:</p>
+                    <p>@ViewBag.FoodData.Name</p>
+                </p>
+                <hr>
+                <div class="blog-post-actions">
+                    <p class="blog-post-bottom pull-left">
+                        @ViewBag.FoodData.Genre
+                    </p>
+                    <p class="blog-post-bottom pull-right">
+                        <span class="badge quote-badge"></span>  ❤
+                    </p>
+                </div>
+            </blockquote>
+        </div>
+
+    </div>
+        </div>
+
+
+
+
+<p>Don't like your options? Give it another shot!</p>
+
+<FORM ACTION="/Home/Member" METHOD="get">
+    <!--<button type="button" class="btn btn-default btn-round-sm btn-sm">Try again!</button> -->
+   <!--PUT TYPE="submit" VALUE="Try again!"> -->
+    <input class="btn btn-secondary" type="submit" value="Try again!" />
+</FORM>
+
+
+    
