@@ -4,6 +4,20 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+<h2>Weather</h2>
+
+<table class="table">
+   
+    <tr>
+        <td>@ViewBag.Time[0]</td>
+        <td>@ViewBag.Weather[0]</td>
+        <td>@ViewBag.Temp[0]°F</td>
+        <td>@ViewBag.Text[0]</td>
+
+
+    </tr>
+
+</table>
 
 <link type="text/css" href="~/Content/Style1.css" rel="stylesheet" />
 <div class="container">
@@ -34,6 +48,7 @@
             background-attachment: fixed;
             background-position: center;
             background-color: transparent;
+            background-size: cover;
         }
 
      

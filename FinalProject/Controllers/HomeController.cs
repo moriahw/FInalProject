@@ -4,6 +4,9 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using FinalProject.Models;
+using System.Net;
+using System.IO;
+using Newtonsoft.Json.Linq;
 
 namespace FinalProject.Controllers
 {
@@ -34,6 +37,29 @@ namespace FinalProject.Controllers
        
         public ActionResult Member()
         {
+            //call the API using the URL. thia can be done by using HTTP requests and responses
+
+            HttpWebRequest WR = WebRequest.CreateHttp("http://forecast.weather.gov/MapClick.php?lat=42.3331&lon=-83.0496&FcstType=json");
+
+            WR.UserAgent = @"User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.116 Safari/537.36";
+
+            HttpWebResponse Response = (HttpWebResponse)WR.GetResponse();
+
+            StreamReader reader = new StreamReader(Response.GetResponseStream());//get a reference to the response stream
+
+            string WeatherData = reader.ReadToEnd();// reads the data and stores it in the string
+
+            JObject JsonData = JObject.Parse(WeatherData);
+
+            ViewBag.Weather = JsonData["data"]["weather"];
+
+            ViewBag.Time = JsonData["time"]["startPeriodName"];
+
+            ViewBag.Temp = JsonData["data"]["temperature"];
+
+            ViewBag.Text = JsonData["data"]["text"];
+
+            ///////////////////////////////////////////////////
             maedbEntities2 Members = new maedbEntities2();
 
             List<Event> UserEvent = Members.Events.ToList();
