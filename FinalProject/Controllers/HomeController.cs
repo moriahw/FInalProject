@@ -19,7 +19,7 @@ namespace FinalProject.Controllers
         }
 
         public ActionResult About()
-        { 
+        {
 
             return View();
         }
