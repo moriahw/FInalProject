@@ -54,5 +54,10 @@ namespace FinalProject.Controllers
         {
             return View();
         }
+
+        public ActionResult Team()
+        {
+            return View();
+        }
     }
 }
