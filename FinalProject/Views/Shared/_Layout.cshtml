@@ -7,8 +7,11 @@
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:400,300" rel="stylesheet">
+
 </head>
 <body>
+
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -23,8 +26,11 @@
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Souvenirs", "Souvenirs", "Home")</li>
-                    <li>@Html.ActionLink("Member", "Member", "Home")</li>
+
+                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("Member", "Random", "Home")</li>
+                    <li>@Html.ActionLink("Team", "Team", "Home")</li>
+
 
                 </ul>
                 @Html.Partial("_LoginPartial")

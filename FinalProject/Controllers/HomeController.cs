@@ -39,6 +39,7 @@ namespace FinalProject.Controllers
             List<Event> UserEvent = Members.Events.ToList();
             List<Food> UserFood = Members.Foods.ToList();
 
+
             // random number generator 
             Random rnd = new Random(Guid.NewGuid().GetHashCode()); //generates a new sequence each time the method is called
             int Number1 = rnd.Next(1, UserEvent.Count);
@@ -50,6 +51,16 @@ namespace FinalProject.Controllers
             /////////////////
             ViewBag.FoodData = UserFood[Number2];
 
+            return View();
+        }
+
+        public ActionResult Random()
+        {
+            return View();
+        }
+
+        public ActionResult Team()
+        {
             return View();
         }
     }
