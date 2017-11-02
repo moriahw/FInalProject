@@ -1,17 +1,44 @@
 ﻿@{
-    ViewBag.Title = "Contact";
+    ViewBag.Title = "Souvenir";
 }
 <h2>@ViewBag.Title.</h2>
 <h3>@ViewBag.Message</h3>
 
-<address>
-    One Microsoft Way<br />
-    Redmond, WA 98052-6399<br />
-    <abbr title="Phone">P:</abbr>
-    425.555.0100
-</address>
+<div class="well">
+    <table style="font-family:Comic Sans MS" class="table table-bordered">
 
-<address>
-    <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
-    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-</address>
+        <tr>
+            <th>
+                Souvenir Type
+            </th>
+            <th>
+                Description
+            </th>
+            <th>
+                Price
+            </th>
+
+
+        </tr>
+
+        @foreach (var Element in ViewBag.Emplist)
+        {
+            <tr>
+                <td>
+                    @Element.Souvenirname
+                </td>
+
+                <td>
+                    @Element.Description
+                </td>
+                <td>
+                    @Element.Price
+                </td>
+                <td>
+                    <a href="/Home/AddtoCart?Souvenirname=@Element.Souvenirname" onclick="return confirm ('Are you sure?')">Add to Cart</a>
+                </td>
+            </tr>
+
+        }
+    </table>
+</div>

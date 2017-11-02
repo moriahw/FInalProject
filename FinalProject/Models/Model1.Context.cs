@@ -13,10 +13,10 @@ namespace FinalProject.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class maedbEntities1 : DbContext
+    public partial class maedbEntities2 : DbContext
     {
-        public maedbEntities1()
-            : base("name=maedbEntities1")
+        public maedbEntities2()
+            : base("name=maedbEntities2")
         {
         }
     
@@ -26,7 +26,7 @@ namespace FinalProject.Models
         }
     
         public virtual DbSet<Event> Events { get; set; }
-        public virtual DbSet<AspNetUser> AspNetUsers { get; set; }
         public virtual DbSet<Food> Foods { get; set; }
+        public virtual DbSet<Souvenir> Souvenirs { get; set; }
     }
 }

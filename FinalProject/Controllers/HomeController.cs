@@ -21,16 +21,20 @@ namespace FinalProject.Controllers
             return View();
         }
 
-        public ActionResult Contact()
+        public ActionResult Souvenirs()
         {
+
+            maedbEntities2 SouvenirDB = new maedbEntities2();
+            List<Souvenir> AllSouvenirs = SouvenirDB.Souvenirs.ToList();
+            ViewBag.EmpList = AllSouvenirs;
             ViewBag.Message = "Your contact page.";
 
-            return View();
+            return View("Contact");
         }
        
         public ActionResult Member()
         {
-            maedbEntities1 Members = new maedbEntities1();
+            maedbEntities2 Members = new maedbEntities2();
 
             List<Event> UserEvent = Members.Events.ToList();
             List<Food> UserFood = Members.Foods.ToList();
