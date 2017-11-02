@@ -10,6 +10,7 @@ using Newtonsoft.Json.Linq;
 
 namespace FinalProject.Controllers
 {
+    
     public class HomeController : Controller
     {
         public ActionResult Index()
@@ -18,8 +19,7 @@ namespace FinalProject.Controllers
         }
 
         public ActionResult About()
-        {
-            ViewBag.Message = "Your application description page.";
+        { 
 
             return View();
         }
@@ -31,11 +31,12 @@ namespace FinalProject.Controllers
             List<Souvenir> AllSouvenirs = Members.Souvenirs.ToList();
             ViewBag.EmpList = AllSouvenirs;
 
-            
+
 
             return View("Contact");
         }
-       
+
+        [Authorize]
         public ActionResult Member()
         {
             //call the API using the URL. thia can be done by using HTTP requests and responses
@@ -81,6 +82,7 @@ namespace FinalProject.Controllers
             return View();
         }
 
+        [Authorize]
         public ActionResult Random()
         {
             return View();
