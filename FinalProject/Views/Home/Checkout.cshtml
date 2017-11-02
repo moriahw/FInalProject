@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewBag.Title = "Checkout";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h2>Checkout</h2>
+
+<h3>Your total is @ViewBag.gtotal</h3>
+
+< /br>
+
+<form action="/Home/SavePaymentInfo" method="post">
+
+    Full Name: <input type="text" name="Name" /><br />
+    Address: <input type="text" name="Address" /><br />
+    Credit Card Number: <input type="text" name="CCNumber" /><br />
+    Credit Card Type: <select name="CardType">
+        <option value="Visa">Visa</option>
+        <option value="Amex">American Express</option>
+        <option value="MasterCard">MasterCard</option>
+        <option value="Discover">Discover</option>
+
+    </select><br />
+    <input type="submit" value="Pay" />
+
+</form>

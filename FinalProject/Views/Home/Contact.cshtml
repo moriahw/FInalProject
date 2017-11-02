@@ -37,11 +37,13 @@
                     @Element.Price
                 </td>
                 <td>
-                    <a href="/Home/AddtoCart?Souvenir=@Element.Souvenirname" onclick="return confirm">Add to Cart</a>
+                    <a href="/Home/AddtoCart?Souvenir=@Element.Souvenirname" onclick="return confirm('Your item was successfully added to the cart!')">Add to Cart</a>
                 </td>
             </tr>
 
         }
     </table>
+
+    @ViewBag.Message 
     <a href="/Home/Cart">Go to Cart </a>
 </div>

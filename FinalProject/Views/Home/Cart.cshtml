@@ -39,8 +39,13 @@
                 <td>
                     @Element.Price
                 </td>
+                <td>
+                    <a href="/Home/DeleteItem?name=@Element.Souvenirname" onclick="return confirm ('Are you sure?')">Delete</a>
+                </td>
             </tr>
 
         }
     </table>
 </div>
+
+<a href="/Home/Checkout">Checkout</a>

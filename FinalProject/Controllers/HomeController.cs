@@ -30,7 +30,8 @@ namespace FinalProject.Controllers
             maedbEntities2 Members = new maedbEntities2();
             List<Souvenir> AllSouvenirs = Members.Souvenirs.ToList();
             ViewBag.EmpList = AllSouvenirs;
-            ViewBag.Message = "Your contact page.";
+
+            
 
             return View("Contact");
         }
@@ -122,6 +123,8 @@ namespace FinalProject.Controllers
             List<Souvenir> AllProducts = NewList.Souvenirs.ToList();
             ViewBag.PList = AllProducts;
 
+
+
             return RedirectToAction("Product");
         }
 
@@ -146,9 +149,99 @@ namespace FinalProject.Controllers
             }
 
 
+
+           
+
             ViewBag.Cart = ShoppingBag;
             return View();
 
+        }
+
+        public ActionResult DeleteItem(string name)
+        {
+            List<Souvenir> ShoppingBag; // reference to null 
+
+            if (Session["Cart"] == null)// the cart is empty! 
+            {
+
+                Session.Add("Cart", new List<Souvenir>());
+
+                ShoppingBag = new List<Souvenir>();
+            }
+
+            else// user has items in the cart, so go and retrive it!
+            {
+                ShoppingBag = (List<Souvenir>)Session["Cart"];
+
+            }
+            ///////////////////////////
+        
+
+
+            Souvenir Option = ShoppingBag.Find(x=>x.Souvenirname == name);
+            ShoppingBag.Remove(Option);
+
+            Session["Cart"] = ShoppingBag;// save changes you made to your cart! 
+
+            
+            ViewBag.Cart = ShoppingBag;
+
+          
+
+            return View("Cart") ;
+
+
+        }
+
+        public ActionResult Checkout()
+        {
+            List<Souvenir> ShoppingBag; // reference to null 
+
+            if (Session["Cart"] == null)// the cart is empty! 
+            {
+
+                Session.Add("Cart", new List<Souvenir>());
+
+                ShoppingBag = new List<Souvenir>();
+            }
+
+            else// user has items in the cart, so go and retrive it!
+            {
+                ShoppingBag = (List<Souvenir>)Session["Cart"];
+
+            }
+            ///////////////////////////
+
+
+            double stotal = 0;
+            
+
+
+            for (int i = 0; i < ShoppingBag.Count; i++)
+            {
+                stotal = stotal + double.Parse(ShoppingBag[i].Price);
+              //  gtotal = stotal * Quantity;
+
+
+            }
+
+
+            ViewBag.gtotal = stotal;
+
+
+           // Session["GrandTotal"] = gtotal;
+
+
+
+
+            return View();
+        }
+
+        public ActionResult SavePaymentInfo()
+        {
+
+            return View("Confirm");
+            
         }
     }
 }
