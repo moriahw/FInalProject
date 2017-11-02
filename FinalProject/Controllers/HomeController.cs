@@ -21,11 +21,11 @@ namespace FinalProject.Controllers
             return View();
         }
 
-        public ActionResult Souvenirs()
+        public ActionResult Product()
         {
 
-            maedbEntities2 SouvenirDB = new maedbEntities2();
-            List<Souvenir> AllSouvenirs = SouvenirDB.Souvenirs.ToList();
+            maedbEntities2 Members = new maedbEntities2();
+            List<Souvenir> AllSouvenirs = Members.Souvenirs.ToList();
             ViewBag.EmpList = AllSouvenirs;
             ViewBag.Message = "Your contact page.";
 
@@ -62,6 +62,67 @@ namespace FinalProject.Controllers
         public ActionResult Team()
         {
             return View();
+        }
+
+        public ActionResult AddtoCart(string Souvenir)
+        {
+            List<Souvenir> ShoppingBag; // reference to null 
+
+            if (Session["Cart"] == null)// the cart is empty! 
+            {
+
+                Session.Add("Cart", new List<Souvenir>());
+
+                ShoppingBag = new List<Souvenir>();
+            }
+
+            else// user has items in the cart, so go and retrive it!
+            {
+                ShoppingBag = (List<Souvenir>)Session["Cart"];
+
+            }
+            ///////////////////////////
+            maedbEntities2 ItemList = new maedbEntities2();
+
+
+            Souvenir Option = ItemList.Souvenirs.Find(Souvenir);
+            ShoppingBag.Add(Option);
+
+            Session["Cart"] = ShoppingBag;// save changes you made to your cart! 
+
+            ViewBag.Cart = ShoppingBag;
+
+            maedbEntities2 NewList = new maedbEntities2();
+            List<Souvenir> AllProducts = NewList.Souvenirs.ToList();
+            ViewBag.PList = AllProducts;
+
+            return RedirectToAction("Product");
+        }
+
+        public ActionResult Cart()
+        {
+
+
+            List<Souvenir> ShoppingBag; // reference to null 
+
+            if (Session["Cart"] == null)// the cart is empty! 
+            {
+
+                Session.Add("Cart", new List<Souvenir>());
+
+                ShoppingBag = new List<Souvenir>();
+            }
+
+            else// user has items in the cart, so go and retrive it!
+            {
+                ShoppingBag = (List<Souvenir>)Session["Cart"];
+
+            }
+
+
+            ViewBag.Cart = ShoppingBag;
+            return View();
+
         }
     }
 }
