@@ -318,6 +318,8 @@ body {
     background-color: #ffffff;
 }
 
+
+
 input,
 button,
 select,
@@ -473,9 +475,9 @@ h6,
 .h4,
 .h5,
 .h6 {
-    font-family: 'Cormorant', serif;
-    font-weight: bold;
-    line-height: 1.1;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 22px;
+    line-height: 1.428571429;
 }
 
 h1 small,
@@ -526,7 +528,7 @@ h3,
 
 h4,
 .h4 {
-  font-size: 18px;
+  font-size: 22px;
 }
 
 h5,
@@ -4934,7 +4936,7 @@ a.list-group-item.active > .badge,
     font-weight: 200;
     line-height: 2.1428571435;
     color: inherit;
-    background-color: rgba(0, 0, 0, 0.075);
+    background-color: rgba(0, 0, 0, 0.06);
 }
 
 .jumbotron h1 {
