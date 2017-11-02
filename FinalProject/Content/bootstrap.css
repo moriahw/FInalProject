@@ -1431,7 +1431,13 @@ th {
   vertical-align: top;
   border-top: 1px solid #dddddd;
 }
+#welcome{
+    margin-left: 30%;
+}
 
+/*h1 {
+    margin-left: 30%;
+}*/
 .table thead > tr > th {
   vertical-align: bottom;
   border-bottom: 2px solid #dddddd;
