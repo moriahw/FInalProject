@@ -36,6 +36,6 @@
     font-weight: normal;
 }
 
-#weathertable td {
-    background: #4ADFCC;
+#weathertable {
+    background-color: rgba(74, 223, 204, 0.73);
 }

@@ -314,7 +314,7 @@ body {
     font-family: 'Quicksand', sans-serif;
     font-size: 22px;
     line-height: 1.428571429;
-    color: #333333;
+    color: #080808;
     background-color: #ffffff;
 }
 
@@ -659,7 +659,7 @@ blockquote {
 }
 
 blockquote p {
-  font-size: 17.5px;
+  font-size: 25px;
   font-weight: 300;
   line-height: 1.25;
 }
@@ -1435,6 +1435,9 @@ th {
     margin-left: 30%;
 }
 
+#thanks{
+    font-weight: normal;
+}
 /*h1 {
     margin-left: 30%;
 }*/
