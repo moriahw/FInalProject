@@ -40,7 +40,7 @@
                     @Element.Price
                 </td>
                 <td>
-                    <a href="/Home/DeleteItem?name=@Element.Souvenirname" onclick="return confirm ('Are you sure?')">Delete</a>
+                    <a href="/Home/DeleteItem?name=@Element.Souvenirname" onclick="return confirm ('Are you sure?')" class="btn btn-primary btn-danger"><span class="glyphicon glyphicon-remove"></span> Delete</a>
                 </td>
             </tr>
 
@@ -48,4 +48,4 @@
     </table>
 </div>
 
-<a href="/Home/Checkout">Checkout</a>
+<a href="/Home/Checkout" class="btn btn-primary btn-success"><span class="glyphicon glyphicon-share-alt"></span> Checkout</a>
